@@ -25,7 +25,7 @@ struct NewYorkTimesAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewsListView()
         }
         .modelContainer(sharedModelContainer)
     }

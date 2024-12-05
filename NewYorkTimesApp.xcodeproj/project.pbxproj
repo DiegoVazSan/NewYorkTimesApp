@@ -15,6 +15,7 @@
 		DB65ACB12D0256D700000C37 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACB02D0256D700000C37 /* NewsListView.swift */; };
 		DB65ACB62D02573F00000C37 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACB52D02573F00000C37 /* NewModel.swift */; };
 		DB65ACB82D025D8900000C37 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACB72D025D8900000C37 /* NewsCell.swift */; };
+		DB65ACBA2D025EAA00000C37 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACB92D025EAA00000C37 /* NewsListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DB65ACB02D0256D700000C37 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		DB65ACB52D02573F00000C37 /* NewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewModel.swift; sourceTree = "<group>"; };
 		DB65ACB72D025D8900000C37 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		DB65ACB92D025EAA00000C37 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		DB65ACB42D0256F400000C37 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DB65ACB92D025EAA00000C37 /* NewsListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB65ACA22D0247E800000C37 /* ContentView.swift in Sources */,
+				DB65ACBA2D025EAA00000C37 /* NewsListViewModel.swift in Sources */,
 				DB65ACB12D0256D700000C37 /* NewsListView.swift in Sources */,
 				DB65ACA42D0247E800000C37 /* Item.swift in Sources */,
 				DB65ACA02D0247E800000C37 /* NewYorkTimesAppApp.swift in Sources */,
