@@ -25,17 +25,17 @@ struct Media: Codable {
 
 struct ArticleModel: Codable {
     let title: String
-    let byline: String
+    let author: String
     let publishedDate: String
-    let abstract: String
+    let description: String
     let updated: String
     let media: [Media]
 
     enum CodingKeys: String, CodingKey {
         case title
-        case byline
+        case author = "byline"
         case publishedDate = "published_date"
-        case abstract
+        case description = "abstract"
         case updated
         case media
     }
