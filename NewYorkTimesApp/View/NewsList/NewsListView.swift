@@ -18,7 +18,7 @@ struct NewsListView: View {
                     NewsCell(article: e)
                 }
             }
-            .navigationTitle("News")
+            .navigationTitle("Latest News")
             .onAppear {
                 viewModel.fetchArticles()
             }
