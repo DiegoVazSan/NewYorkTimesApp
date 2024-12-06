@@ -7,9 +7,9 @@
 
 import Foundation
 
-@Observable
-class NewsListVM {
-    var articles : [ArticleModel] = []
+class NewsListVM : ObservableObject {
+    @Published var articles : [ArticleModel] = []
+    
     
     func fetchArticles() {
         guard let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=qTl6HA9lEk9bHwEMNSrdjRAceMnSqQEZ") else {

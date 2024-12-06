@@ -9,12 +9,14 @@ import SwiftUI
 
 struct NewsListView: View {
     
-    var viewModel: NewsListVM = NewsListVM()
+    @ObservedObject var viewModel: NewsListVM = NewsListVM()
     
     var body: some View {
         NavigationStack {
-            List(1..<10) { item in
-                NewsCell()
+            List {
+                ForEach(viewModel.articles) { e in
+                    NewsCell(article: e)
+                }
             }
             .navigationTitle("News")
             .onAppear {

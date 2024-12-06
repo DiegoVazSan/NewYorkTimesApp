@@ -1,5 +1,5 @@
 //
-//  NewModel.swift
+//  NewsResponseModel.swift
 //  NewYorkTimesApp
 //
 //  Created by Diego Vazquez Sanchez on 05/12/24.
@@ -23,7 +23,8 @@ struct Media: Codable {
     }
 }
 
-struct ArticleModel: Codable {
+struct ArticleModel: Codable, Identifiable {
+    var id: String { title + publishedDate }
     let title: String
     let author: String
     let publishedDate: String
@@ -46,20 +47,3 @@ struct NewsResponseModel : Codable {
     var status : String
     var results : [ArticleModel]
 }
-
-
-/*
- Populares
- 
- 
- DETALLE
- titulo
- autor -> byline
- fecha de publicacion
- contenido -> (abstract
- 
- 
- 
- 
- 
- */
