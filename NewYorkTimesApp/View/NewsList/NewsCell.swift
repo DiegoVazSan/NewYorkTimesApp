@@ -13,15 +13,8 @@ struct NewsCell: View {
     
     var body: some View {
         VStack {
-            KFImage(URL(string: article.media.first?.mediaMetadata.last?.url ?? ""))
-                .placeholder {
-                    ProgressView()
-                }
-                .resizable()
-                .scaledToFit()
-                .frame(width: 300, height: 300)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .shadow(color: .black, radius: 15, x: 5, y: 5)
+            
+            NewsImage(urlString: article.media.first?.mediaMetadata.last?.url)
             
             VStack {
                 Text(article.title)
@@ -33,6 +26,34 @@ struct NewsCell: View {
                     .foregroundColor(.secondary)
             }
         }
+        .padding(.bottom, 10)
+    }
+}
+
+
+
+
+struct NewsImage: View {
+    var urlString: String?
+    
+    var body: some View {
+        Group {
+            if let imgUrlString = urlString, let url = URL(string: imgUrlString) {
+                KFImage(url)
+                    .placeholder {
+                        ProgressView()
+                    }
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Image("newYorkTimesLogo")
+                    .resizable()
+                    .scaledToFit()
+            }
+        }
+        .frame(width: 300, height: 300)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: .black, radius: 15, x: 5, y: 5)
         .padding(.bottom, 10)
     }
 }
