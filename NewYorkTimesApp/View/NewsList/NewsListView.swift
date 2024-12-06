@@ -18,7 +18,7 @@ struct NewsListView: View {
                     NewsCell(article: e)
                 }
             }
-            .navigationTitle("News")
+            .navigationTitle("main_title".localized())
             .onAppear {
                 viewModel.fetchArticles()
             }

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  NewYorkTimesApp
+
+  Created by Diego Vazquez Sanchez on 06/12/24.
+  
+*/
+
+"welcome_message" = "¡Bienvenido a la app!";
+"error_message" = "Algo salió mal. Por favor, intenta de nuevo.";
+"logout_confirmation" = "¿Estás seguro de que deseas cerrar sesión?";

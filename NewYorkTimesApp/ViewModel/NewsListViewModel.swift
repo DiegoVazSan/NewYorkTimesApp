@@ -12,7 +12,7 @@ class NewsListVM : ObservableObject {
     
     
     func fetchArticles() {
-        guard let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=qTl6HA9lEk9bHwEMNSrdjRAceMnSqQEZ") else {
+        guard let url = APIConfig.getArticlesURL() else {
                     print("URL inválida")
                     return
                 }

@@ -46,7 +46,7 @@ struct NewsImage: View {
                     .resizable()
                     .scaledToFit()
             } else {
-                Image("newYorkTimesLogo")
+                Image(Config.defaultImage)
                     .resizable()
                     .scaledToFit()
             }
