@@ -13,14 +13,33 @@ struct NewsListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.articles) { e in
-                    NewsCell(article: e)
+            ZStack {
+                List {
+                    ForEach(viewModel.articles) { e in
+                        NewsCell(article: e)
+                    }
                 }
-            }
-            .navigationTitle("main_title".localized())
-            .onAppear {
-                viewModel.fetchArticles()
+                .navigationTitle("main_title".localized())
+                .onAppear {
+                    viewModel.fetchArticles()
+                }
+                .alert("Error", isPresented: $viewModel.showErrorAlert) {
+                    Button("Retry") {
+                        viewModel.fetchArticles()
+                    }
+                } message: {
+                    Text(viewModel.errorMessage ?? "")
+                }
+                
+                if viewModel.isLoading {
+                    Color.black.opacity(0.3)
+                        .ignoresSafeArea()
+                    ProgressView("Cargando...")
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                }
             }
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB55156F2D03D6BB007571BF /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55156E2D03D6BB007571BF /* APIConfig.swift */; };
+		DB5515712D03D71F007571BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5515702D03D71F007571BF /* NetworkManager.swift */; };
 		DB65ACA02D0247E800000C37 /* NewYorkTimesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65AC9F2D0247E800000C37 /* NewYorkTimesAppApp.swift */; };
 		DB65ACA22D0247E800000C37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACA12D0247E800000C37 /* ContentView.swift */; };
 		DB65ACA42D0247E800000C37 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACA32D0247E800000C37 /* Item.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB55156E2D03D6BB007571BF /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		DB5515702D03D71F007571BF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DB65AC9C2D0247E800000C37 /* NewYorkTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewYorkTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB65AC9F2D0247E800000C37 /* NewYorkTimesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkTimesAppApp.swift; sourceTree = "<group>"; };
 		DB65ACA12D0247E800000C37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB55156D2D03D6A0007571BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DB7564B72D038D5C005FD289 /* Errors */,
+				DB55156E2D03D6BB007571BF /* APIConfig.swift */,
+				DB5515702D03D71F007571BF /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		DB65AC932D0247E800000C37 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +86,7 @@
 		DB65AC9E2D0247E800000C37 /* NewYorkTimesApp */ = {
 			isa = PBXGroup;
 			children = (
+				DB55156D2D03D6A0007571BF /* Network */,
 				DB7564AE2D037C2B005FD289 /* Utils */,
 				DB65ACB42D0256F400000C37 /* ViewModel */,
 				DB65ACB32D0256EE00000C37 /* Model */,
@@ -113,7 +128,6 @@
 		DB65ACB32D0256EE00000C37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DB7564B72D038D5C005FD289 /* Errors */,
 				DB65ACB52D02573F00000C37 /* NewsResponseModel.swift */,
 			);
 			path = Model;
@@ -223,8 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB5515712D03D71F007571BF /* NetworkManager.swift in Sources */,
 				DB65ACA22D0247E800000C37 /* ContentView.swift in Sources */,
 				DB65ACBA2D025EAA00000C37 /* NewsListViewModel.swift in Sources */,
+				DB55156F2D03D6BB007571BF /* APIConfig.swift in Sources */,
 				DB65ACB12D0256D700000C37 /* NewsListView.swift in Sources */,
 				DB65ACA42D0247E800000C37 /* Item.swift in Sources */,
 				DB7564B52D037EFC005FD289 /* String+Extensions.swift in Sources */,

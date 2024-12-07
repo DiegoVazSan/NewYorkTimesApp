@@ -10,41 +10,33 @@ import Foundation
 class NewsListVM : ObservableObject {
     @Published var articles : [ArticleModel] = []
     @Published var errorMessage : String?
-    
+    @Published var showErrorAlert : Bool = false
+    @Published var isLoading: Bool = false
     
     func fetchArticles() {
-        guard let url = APIConfig.getArticlesURL() else {
-            self.handleError(.invalidURL)
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let fail = error {
-                self.handleError(.networkError(fail))
-                return
-            }
-            
-            guard let data = data else {
-                self.handleError(.noData)
-                return
-            }
-            
-            do {
-                let decodedResponse = try JSONDecoder().decode(NewsResponseModel.self, from: data)
-                DispatchQueue.main.async {
-                    self.articles = decodedResponse.results
+        isLoading = true
+        NetworkManager.fetchArticles { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let articles):
+                    self.articles = articles
+                    self.showErrorAlert = false
+                case .failure(let error):
+                    self.handleError(error)
                 }
-            } catch {
-                self.handleError(.decodingError(error))
+                self.isLoading = false
             }
-        }.resume()
+        }
     }
+
     
     private func handleError(_ error: RequestError) {
         
         print(error.localizedDescription)
         DispatchQueue.main.async {
             self.errorMessage = error.localizedDescription
+            self.showErrorAlert = true
+            self.isLoading = false
         }
         
     }
