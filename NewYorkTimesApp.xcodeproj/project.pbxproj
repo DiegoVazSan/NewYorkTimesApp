@@ -23,6 +23,8 @@
 		DB7564B32D037D70005FD289 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB7564B12D037D70005FD289 /* Localizable.strings */; };
 		DB7564B52D037EFC005FD289 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564B42D037EFC005FD289 /* String+Extensions.swift */; };
 		DB7564B92D038D69005FD289 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564B82D038D69005FD289 /* RequestError.swift */; };
+		DBC3CFFB2D04D99E001D4BF5 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3CFFA2D04D99E001D4BF5 /* NetworkSession.swift */; };
+		DBC3CFFD2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3CFFC2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		DB7564B42D037EFC005FD289 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DB7564B62D038087005FD289 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB7564B82D038D69005FD289 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		DBC3CFFA2D04D99E001D4BF5 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		DBC3CFFC2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkSession+URLSession.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB55156D2D03D6A0007571BF /* Network */ = {
+		DB55156D2D03D6A0007571BF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				DB7564B72D038D5C005FD289 /* Errors */,
 				DB55156E2D03D6BB007571BF /* APIConfig.swift */,
 				DB5515702D03D71F007571BF /* NetworkManager.swift */,
+				DBC3CFFA2D04D99E001D4BF5 /* NetworkSession.swift */,
+				DBC3CFFC2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift */,
 			);
-			path = Network;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		DB65AC932D0247E800000C37 = {
@@ -86,7 +92,7 @@
 		DB65AC9E2D0247E800000C37 /* NewYorkTimesApp */ = {
 			isa = PBXGroup;
 			children = (
-				DB55156D2D03D6A0007571BF /* Network */,
+				DB55156D2D03D6A0007571BF /* Networking */,
 				DB7564AE2D037C2B005FD289 /* Utils */,
 				DB65ACB42D0256F400000C37 /* ViewModel */,
 				DB65ACB32D0256EE00000C37 /* Model */,
@@ -244,10 +250,12 @@
 				DB65ACB12D0256D700000C37 /* NewsListView.swift in Sources */,
 				DB65ACA42D0247E800000C37 /* Item.swift in Sources */,
 				DB7564B52D037EFC005FD289 /* String+Extensions.swift in Sources */,
+				DBC3CFFB2D04D99E001D4BF5 /* NetworkSession.swift in Sources */,
 				DB65ACA02D0247E800000C37 /* NewYorkTimesAppApp.swift in Sources */,
 				DB7564B92D038D69005FD289 /* RequestError.swift in Sources */,
 				DB7564B02D037C41005FD289 /* Config.swift in Sources */,
 				DB65ACB82D025D8900000C37 /* NewsCell.swift in Sources */,
+				DBC3CFFD2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift in Sources */,
 				DB65ACB62D02573F00000C37 /* NewsResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

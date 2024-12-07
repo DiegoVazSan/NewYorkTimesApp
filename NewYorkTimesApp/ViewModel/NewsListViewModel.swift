@@ -18,29 +18,18 @@ class NewsListVM : ObservableObject {
         }
     
     @Published var state: ViewState<[ArticleModel]> = .inactive
+    private var networkManager: NetworkManager
     private var cancellables = Set<AnyCancellable>()
+    
+    init(networkManager: NetworkManager = NetworkManager()) {
+            self.networkManager = networkManager
+        }
     
     func fetchArticles() {
         
         state = .loading
         
-//        NetworkManager.fetchArticles { [weak self] result in
-//            
-//            DispatchQueue.main.async {
-//                
-//                switch result {
-//                    
-//                case .success(let articles):
-//                    self?.state = .success(articles)
-//                    
-//                case .failure(let error):
-//                    self?.state = .failure(error.localizedDescription)
-//                }
-//            }
-//            
-//        }
-        
-        NetworkManager.fetchArticles()
+        networkManager.fetchArticles()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
@@ -53,8 +42,6 @@ class NewsListVM : ObservableObject {
                 self?.state = .success(articles)
             }
             .store(in: &cancellables)
-
-        
     }
     
 }

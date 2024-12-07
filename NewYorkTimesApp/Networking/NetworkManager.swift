@@ -10,12 +10,18 @@ import Foundation
 
 class NetworkManager {
     
-    static func fetchArticles() -> AnyPublisher<[ArticleModel], RequestError> {
+    private let session: NetworkSession
+    
+    init(session: NetworkSession = URLSession.shared) {
+            self.session = session
+        }
+    
+    func fetchArticles() -> AnyPublisher<[ArticleModel], RequestError> {
         guard let url = APIConfig.getArticlesURL() else {
             return Fail(error: RequestError.invalidURL).eraseToAnyPublisher()
         }
 
-        return URLSession.shared.dataTaskPublisher(for: url)
+        return session.publisher(for: url)
             .map { $0.data }
             .tryMap { data -> [ArticleModel] in
                 do {
