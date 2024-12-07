@@ -24,6 +24,7 @@ struct NewsCell: View {
                     .padding(.bottom)
                 Text(article.description)
                     .font(.subheadline)
+                    .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
             }.padding()
         }

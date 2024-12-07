@@ -14,7 +14,7 @@ struct NewsListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.indigo.ignoresSafeArea(.all)
+                Color("MainColor").ignoresSafeArea(.all)
                 
                 Group {
                     
@@ -28,9 +28,10 @@ struct NewsListView: View {
                     case .success(let articles):
                         List(articles) { article in
                             NewsCell(article: article)
+                                .listRowBackground(Color.clear)
+                                .listRowSeparator(.hidden)
                         }
                         .listStyle(PlainListStyle())
-                        .listRowSeparator(.hidden)
                         .scrollIndicators(.hidden)
                         
                     case .failure(let errorMsg):
