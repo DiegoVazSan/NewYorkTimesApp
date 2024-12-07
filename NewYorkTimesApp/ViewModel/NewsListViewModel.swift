@@ -8,37 +8,35 @@
 import Foundation
 
 class NewsListVM : ObservableObject {
-    @Published var articles : [ArticleModel] = []
-    @Published var errorMessage : String?
-    @Published var showErrorAlert : Bool = false
-    @Published var isLoading: Bool = false
+    
+    enum ViewState<T> {
+            case inactive
+            case loading
+            case success(T)
+            case failure(String)
+        }
+    
+    @Published var state: ViewState<[ArticleModel]> = .inactive
     
     func fetchArticles() {
-        isLoading = true
-        NetworkManager.fetchArticles { result in
+        
+        state = .loading
+        
+        NetworkManager.fetchArticles { [weak self] result in
+            
             DispatchQueue.main.async {
+                
                 switch result {
+                    
                 case .success(let articles):
-                    self.articles = articles
-                    self.showErrorAlert = false
+                    self?.state = .success(articles)
+                    
                 case .failure(let error):
-                    self.handleError(error)
+                    self?.state = .failure(error.localizedDescription)
                 }
-                self.isLoading = false
             }
+            
         }
-    }
-
-    
-    private func handleError(_ error: RequestError) {
-        
-        print(error.localizedDescription)
-        DispatchQueue.main.async {
-            self.errorMessage = error.localizedDescription
-            self.showErrorAlert = true
-            self.isLoading = false
-        }
-        
     }
     
 }

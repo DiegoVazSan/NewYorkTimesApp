@@ -13,37 +13,37 @@ struct NewsListView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                List {
-                    ForEach(viewModel.articles) { e in
-                        NewsCell(article: e)
+            Group {
+                
+                switch self.viewModel.state {
+                case .inactive:
+                    NewsImage()
+                    
+                case .loading:
+                    ProgressView("Loading...")
+                    
+                case .success(let articles):
+                    List(articles) { article in
+                        NewsCell(article: article)
                     }
-                }
-                .navigationTitle("main_title".localized())
-                .onAppear {
-                    viewModel.fetchArticles()
-                }
-                .alert("Error", isPresented: $viewModel.showErrorAlert) {
-                    Button("Retry") {
-                        viewModel.fetchArticles()
+                    
+                case .failure(let errorMsg):
+                    VStack {
+                        Text("Error: \(errorMsg)")
+                            .foregroundColor(.red)
+                        Button("Retry") {
+                            viewModel.fetchArticles()
+                        }
                     }
-                } message: {
-                    Text(viewModel.errorMessage ?? "")
                 }
                 
-                if viewModel.isLoading {
-                    Color.black.opacity(0.3)
-                        .ignoresSafeArea()
-                    ProgressView("Cargando...")
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                }
+            }
+            .navigationTitle("main_title".localized())
+            .onAppear {
+                viewModel.fetchArticles()
             }
         }
     }
-    
 }
 
 #Preview {
