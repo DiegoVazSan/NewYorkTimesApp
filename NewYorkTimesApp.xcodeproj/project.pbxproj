@@ -20,6 +20,7 @@
 		DB7564B02D037C41005FD289 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564AF2D037C41005FD289 /* Config.swift */; };
 		DB7564B32D037D70005FD289 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB7564B12D037D70005FD289 /* Localizable.strings */; };
 		DB7564B52D037EFC005FD289 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564B42D037EFC005FD289 /* String+Extensions.swift */; };
+		DB7564B92D038D69005FD289 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564B82D038D69005FD289 /* RequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		DB7564B22D037D70005FD289 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB7564B42D037EFC005FD289 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DB7564B62D038087005FD289 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DB7564B82D038D69005FD289 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		DB65ACB32D0256EE00000C37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DB7564B72D038D5C005FD289 /* Errors */,
 				DB65ACB52D02573F00000C37 /* NewsResponseModel.swift */,
 			);
 			path = Model;
@@ -132,6 +135,14 @@
 				DB7564B42D037EFC005FD289 /* String+Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DB7564B72D038D5C005FD289 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				DB7564B82D038D69005FD289 /* RequestError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				DB65ACA42D0247E800000C37 /* Item.swift in Sources */,
 				DB7564B52D037EFC005FD289 /* String+Extensions.swift in Sources */,
 				DB65ACA02D0247E800000C37 /* NewYorkTimesAppApp.swift in Sources */,
+				DB7564B92D038D69005FD289 /* RequestError.swift in Sources */,
 				DB7564B02D037C41005FD289 /* Config.swift in Sources */,
 				DB65ACB82D025D8900000C37 /* NewsCell.swift in Sources */,
 				DB65ACB62D02573F00000C37 /* NewsResponseModel.swift in Sources */,
