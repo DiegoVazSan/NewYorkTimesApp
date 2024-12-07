@@ -20,7 +20,7 @@ struct NewsListView: View {
                     NewsImage()
                     
                 case .loading:
-                    ProgressView("Loading...")
+                    ProgressView("loading".localized())
                     
                 case .success(let articles):
                     List(articles) { article in
@@ -29,9 +29,10 @@ struct NewsListView: View {
                     
                 case .failure(let errorMsg):
                     VStack {
-                        Text("Error: \(errorMsg)")
+                        Text("error_message".localized())
                             .foregroundColor(.red)
-                        Button("Retry") {
+                        Text("(\(errorMsg))")
+                        Button("retry".localized()) {
                             viewModel.fetchArticles()
                         }
                     }

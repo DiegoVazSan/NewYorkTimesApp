@@ -7,5 +7,7 @@
 */
 
 "main_title" = "New York Times";
+"loading" = "Loading...";
 "error_message" = "Algo salió mal. Por favor, intenta de nuevo.";
-"logout_confirmation" = "¿Estás seguro de que deseas cerrar sesión?";
+"error" = "Error:";
+"retry" = "Retry";
