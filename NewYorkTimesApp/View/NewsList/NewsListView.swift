@@ -13,31 +13,38 @@ struct NewsListView: View {
     
     var body: some View {
         NavigationStack {
-            Group {
+            ZStack {
+                Color.indigo.ignoresSafeArea(.all)
                 
-                switch self.viewModel.state {
-                case .inactive:
-                    NewsImage()
+                Group {
                     
-                case .loading:
-                    ProgressView("loading".localized())
-                    
-                case .success(let articles):
-                    List(articles) { article in
-                        NewsCell(article: article)
-                    }
-                    
-                case .failure(let errorMsg):
-                    VStack {
-                        Text("error_message".localized())
-                            .foregroundColor(.red)
-                        Text("(\(errorMsg))")
-                        Button("retry".localized()) {
-                            viewModel.fetchArticles()
+                    switch self.viewModel.state {
+                    case .inactive:
+                        NewsImage()
+                        
+                    case .loading:
+                        ProgressView("loading".localized())
+                        
+                    case .success(let articles):
+                        List(articles) { article in
+                            NewsCell(article: article)
+                        }
+                        .listStyle(PlainListStyle())
+                        .listRowSeparator(.hidden)
+                        .scrollIndicators(.hidden)
+                        
+                    case .failure(let errorMsg):
+                        VStack {
+                            Text("error_message".localized())
+                                .foregroundColor(.red)
+                            Text("(\(errorMsg))")
+                            Button("retry".localized()) {
+                                viewModel.fetchArticles()
+                            }
                         }
                     }
+                    
                 }
-                
             }
             .navigationTitle("main_title".localized())
             .onAppear {

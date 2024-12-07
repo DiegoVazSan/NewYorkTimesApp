@@ -15,6 +15,7 @@ struct NewsCell: View {
         VStack {
             
             NewsImage(urlString: article.media.first?.mediaMetadata.last?.url)
+                .padding(.horizontal)
             
             VStack {
                 Text(article.title)
@@ -24,8 +25,12 @@ struct NewsCell: View {
                 Text(article.description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-            }
+            }.padding()
         }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(color: .black.opacity(0.5), radius: 5, x: 4, y: 4)
+        .padding(.horizontal, 10)
         .padding(.bottom, 10)
     }
 }
