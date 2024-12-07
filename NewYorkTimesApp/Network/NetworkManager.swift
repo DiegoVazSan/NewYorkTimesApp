@@ -5,32 +5,30 @@
 //  Created by Diego Vazquez Sanchez on 06/12/24.
 //
 
+import Combine
 import Foundation
 
 class NetworkManager {
-    static func fetchArticles(completion: @escaping (Result<[ArticleModel], RequestError>) -> Void) {
+    
+    static func fetchArticles() -> AnyPublisher<[ArticleModel], RequestError> {
         guard let url = APIConfig.getArticlesURL() else {
-            completion(.failure(.invalidURL))
-            return
+            return Fail(error: RequestError.invalidURL).eraseToAnyPublisher()
         }
 
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let fail = error {
-                completion(.failure(.networkError(fail)))
-                return
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .tryMap { data -> [ArticleModel] in
+                do {
+                    let decodedResponse = try JSONDecoder().decode(NewsResponseModel.self, from: data)
+                    return decodedResponse.results
+                } catch {
+                    throw RequestError.decodingError(error)
+                }
             }
-
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
+            .mapError { error in
+                (error as? RequestError) ?? RequestError.networkError(error)
             }
-
-            do {
-                let decodedResponse = try JSONDecoder().decode(NewsResponseModel.self, from: data)
-                completion(.success(decodedResponse.results))
-            } catch {
-                completion(.failure(.decodingError(error)))
-            }
-        }.resume()
+            .eraseToAnyPublisher()
     }
 }
+
