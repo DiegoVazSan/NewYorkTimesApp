@@ -45,9 +45,6 @@ struct NewsListView: View {
                 }
             }
             .navigationTitle("main_title".localized())
-            .onAppear {
-                viewModel.fetchArticles()
-            }
         }
     }
 }

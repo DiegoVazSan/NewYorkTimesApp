@@ -15,6 +15,7 @@ struct ArticleDetailView: View {
             Text(article.title)
                 .fontWeight(.bold)
                 .font(.title)
+                .padding(.bottom, 5)
             HStack {
                 Text(article.author)
                     .foregroundStyle(.gray)

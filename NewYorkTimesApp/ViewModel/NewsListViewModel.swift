@@ -23,6 +23,7 @@ class NewsListVM : ObservableObject {
     
     init(networkManager: NetworkManager = NetworkManager()) {
             self.networkManager = networkManager
+            fetchArticles()
         }
     
     func fetchArticles() {
