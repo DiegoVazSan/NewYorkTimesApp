@@ -10,8 +10,52 @@ import SwiftUI
 struct ArticleDetailView: View {
     let article: ArticleModel
     
+    var headerView: some View {
+        VStack(alignment: .leading) {
+            Text(article.title)
+                .fontWeight(.bold)
+                .font(.title)
+            HStack {
+                Text(article.author)
+                    .foregroundStyle(.gray)
+                    .font(.title3)
+                Spacer()
+            }
+        }.padding()
+    }
+    
+    var mainView: some View {
+        VStack {
+            NewsImage(urlString: article.media.first?.mediaMetadata.last?.url)
+                .padding(.horizontal)
+            Text(article.description)
+                .font(.system(size: 22))
+                .padding(.horizontal)
+        }
+    }
+    
+    var footerView: some View {
+        VStack {
+            Text("publication_date".localized() + article.publishedDate)
+                .font(.footnote)
+                .foregroundStyle(.gray)
+            Text("updated".localized() + article.updated)
+                .foregroundStyle(.gray)
+                .font(.footnote)
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .padding()
+    }
+    
     var body: some View {
-        Text(article.title)
+        ScrollView {
+            VStack {
+                headerView
+                mainView
+                Spacer()
+                footerView
+            }
+        }
     }
 }
 
@@ -20,7 +64,7 @@ struct ArticleDetailView: View {
         title: "A Neurologist’s Tips to Protect Your Memory",
         author: "By Hope Reese",
         publishedDate: "2022-07-06",
-        description: "A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age.",
+        description: "A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age. A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age. A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age. A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age. A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age. A new book by a renowned brain expert says there are a few simple things we can do to prevent memory decline as we age.",
         updated: "2023-06-22 01:23:55",
         media: [
             Media(
