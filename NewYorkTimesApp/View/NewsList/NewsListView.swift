@@ -27,9 +27,13 @@ struct NewsListView: View {
                         
                     case .success(let articles):
                         List(articles) { article in
-                            NewsCell(article: article)
-                                .listRowBackground(Color.clear)
-                                .listRowSeparator(.hidden)
+                            NavigationLink(
+                                destination: ArticleDetailView(article: article)
+                            ) {
+                                NewsCell(article: article)
+                                    .listRowBackground(Color.clear)
+                                    .listRowSeparator(.hidden)
+                            }
                         }
                         .listStyle(PlainListStyle())
                         .scrollIndicators(.hidden)
