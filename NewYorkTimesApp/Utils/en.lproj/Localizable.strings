@@ -8,6 +8,6 @@
 
 "main_title" = "New York Times";
 "loading" = "Loading...";
-"error_message" = "Algo salió mal. Por favor, intenta de nuevo.";
+"error_message" = "Something went wrong. Please try again.";
 "error" = "Error:";
 "retry" = "Retry";

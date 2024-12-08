@@ -35,14 +35,7 @@ struct NewsListView: View {
                         .scrollIndicators(.hidden)
                         
                     case .failure(let errorMsg):
-                        VStack {
-                            Text("error_message".localized())
-                                .foregroundColor(.red)
-                            Text("(\(errorMsg))")
-                            Button("retry".localized()) {
-                                viewModel.fetchArticles()
-                            }
-                        }
+                        ErrorView(msg: errorMsg, action: viewModel.fetchArticles)
                     }
                     
                 }
