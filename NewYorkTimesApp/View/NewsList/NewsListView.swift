@@ -28,7 +28,7 @@ struct NewsListView: View {
                     case .success(let articles):
                         List(articles) { article in
                             NavigationLink(
-                                destination: ArticleDetailView(article: article)
+                                destination: ArticleDetailView(viewModel: self.viewModel, article: article)
                             ) {
                                 NewsCell(article: article)
                                     .listRowBackground(Color.clear)
@@ -45,8 +45,13 @@ struct NewsListView: View {
                 }
             }
             .navigationTitle("main_title".localized())
-            .onAppear {
-                viewModel.fetchArticles()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SavedNewsView()) {
+                        Image(systemName: "star.circle.fill")
+                            .foregroundColor(.black)
+                    }
+                }
             }
         }
     }

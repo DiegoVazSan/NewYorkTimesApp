@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB14D0792D0748FE0015C9E5 /* SavedNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */; };
+		DB14D07B2D0759B40015C9E5 /* SavedNewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB14D07A2D0759B40015C9E5 /* SavedNewsVM.swift */; };
 		DB4C8C692D05DAC900BD61A8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C8C682D05DAC900BD61A8 /* ErrorView.swift */; };
 		DB4C8C6C2D05DC1100BD61A8 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C8C6B2D05DC1100BD61A8 /* ArticleDetailView.swift */; };
 		DB55156F2D03D6BB007571BF /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55156E2D03D6BB007571BF /* APIConfig.swift */; };
 		DB5515712D03D71F007571BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5515702D03D71F007571BF /* NetworkManager.swift */; };
 		DB65ACA02D0247E800000C37 /* NewYorkTimesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65AC9F2D0247E800000C37 /* NewYorkTimesAppApp.swift */; };
-		DB65ACA22D0247E800000C37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACA12D0247E800000C37 /* ContentView.swift */; };
 		DB65ACA42D0247E800000C37 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65ACA32D0247E800000C37 /* Item.swift */; };
 		DB65ACA62D0247E900000C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB65ACA52D0247E900000C37 /* Assets.xcassets */; };
 		DB65ACA92D0247E900000C37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB65ACA82D0247E900000C37 /* Preview Assets.xcassets */; };
@@ -30,13 +31,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsView.swift; sourceTree = "<group>"; };
+		DB14D07A2D0759B40015C9E5 /* SavedNewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsVM.swift; sourceTree = "<group>"; };
 		DB4C8C682D05DAC900BD61A8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DB4C8C6B2D05DC1100BD61A8 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		DB55156E2D03D6BB007571BF /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		DB5515702D03D71F007571BF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DB65AC9C2D0247E800000C37 /* NewYorkTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewYorkTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB65AC9F2D0247E800000C37 /* NewYorkTimesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkTimesAppApp.swift; sourceTree = "<group>"; };
-		DB65ACA12D0247E800000C37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB65ACA32D0247E800000C37 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DB65ACA52D0247E900000C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB65ACA82D0247E900000C37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB14D0772D0748E10015C9E5 /* SavedNews */ = {
+			isa = PBXGroup;
+			children = (
+				DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */,
+			);
+			path = SavedNews;
+			sourceTree = "<group>";
+		};
 		DB4C8C672D05DAB200BD61A8 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +128,6 @@
 				DB65ACB32D0256EE00000C37 /* Model */,
 				DB65ACB22D0256E800000C37 /* View */,
 				DB65AC9F2D0247E800000C37 /* NewYorkTimesAppApp.swift */,
-				DB65ACA12D0247E800000C37 /* ContentView.swift */,
-				DB65ACA32D0247E800000C37 /* Item.swift */,
 				DB65ACA52D0247E900000C37 /* Assets.xcassets */,
 				DB65ACA72D0247E900000C37 /* Preview Content */,
 			);
@@ -146,6 +154,7 @@
 		DB65ACB22D0256E800000C37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB14D0772D0748E10015C9E5 /* SavedNews */,
 				DB4C8C6A2D05DBF100BD61A8 /* Details */,
 				DB4C8C672D05DAB200BD61A8 /* Reusable */,
 				DB65ACAF2D02568600000C37 /* NewsList */,
@@ -157,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				DB65ACB52D02573F00000C37 /* NewsResponseModel.swift */,
+				DB65ACA32D0247E800000C37 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				DB65ACB92D025EAA00000C37 /* NewsListViewModel.swift */,
+				DB14D07A2D0759B40015C9E5 /* SavedNewsVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -266,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5515712D03D71F007571BF /* NetworkManager.swift in Sources */,
-				DB65ACA22D0247E800000C37 /* ContentView.swift in Sources */,
+				DB14D07B2D0759B40015C9E5 /* SavedNewsVM.swift in Sources */,
 				DB65ACBA2D025EAA00000C37 /* NewsListViewModel.swift in Sources */,
 				DB55156F2D03D6BB007571BF /* APIConfig.swift in Sources */,
 				DB65ACB12D0256D700000C37 /* NewsListView.swift in Sources */,
@@ -277,6 +288,7 @@
 				DB4C8C6C2D05DC1100BD61A8 /* ArticleDetailView.swift in Sources */,
 				DB7564B92D038D69005FD289 /* RequestError.swift in Sources */,
 				DB4C8C692D05DAC900BD61A8 /* ErrorView.swift in Sources */,
+				DB14D0792D0748FE0015C9E5 /* SavedNewsView.swift in Sources */,
 				DB7564B02D037C41005FD289 /* Config.swift in Sources */,
 				DB65ACB82D025D8900000C37 /* NewsCell.swift in Sources */,
 				DBC3CFFD2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift in Sources */,

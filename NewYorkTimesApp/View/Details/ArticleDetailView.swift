@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
+    //MARK: - Properties
+    let viewModel: NewsListVM
+    @Environment(\.modelContext) var context
     let article: ArticleModel
     
+    //MARK: - UIProperties
     var headerView: some View {
         VStack(alignment: .leading) {
             Text(article.title)
                 .fontWeight(.bold)
                 .font(.title)
+                .padding(.bottom, 5)
             HStack {
                 Text(article.author)
                     .foregroundStyle(.gray)
@@ -31,6 +36,17 @@ struct ArticleDetailView: View {
             Text(article.description)
                 .font(.system(size: 22))
                 .padding(.horizontal)
+                .padding(.bottom)
+            Button("save".localized()) {
+                viewModel.saveArticleItem(article, context: context)
+            }
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 200)
+            .background(Color.black)
+            .cornerRadius(12)
+            .padding(.bottom)
         }
     }
     
@@ -47,6 +63,7 @@ struct ArticleDetailView: View {
         .padding()
     }
     
+    //MARK: - Body
     var body: some View {
         ScrollView {
             VStack {
@@ -60,7 +77,7 @@ struct ArticleDetailView: View {
 }
 
 #Preview {
-    ArticleDetailView(article: ArticleModel(
+    ArticleDetailView(viewModel: NewsListVM(), article: ArticleModel(
         title: "A Neurologist’s Tips to Protect Your Memory",
         author: "By Hope Reese",
         publishedDate: "2022-07-06",
