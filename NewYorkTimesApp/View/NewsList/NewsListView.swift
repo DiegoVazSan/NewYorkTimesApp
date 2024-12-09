@@ -28,7 +28,7 @@ struct NewsListView: View {
                     case .success(let articles):
                         List(articles) { article in
                             NavigationLink(
-                                destination: ArticleDetailView(article: article)
+                                destination: ArticleDetailView(viewModel: self.viewModel, article: article)
                             ) {
                                 NewsCell(article: article)
                                     .listRowBackground(Color.clear)

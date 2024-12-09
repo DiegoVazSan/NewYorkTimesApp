@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import SwiftData
 
 class NewsListVM : ObservableObject {
     
@@ -43,6 +44,20 @@ class NewsListVM : ObservableObject {
                 self?.state = .success(articles)
             }
             .store(in: &cancellables)
+    }
+    
+    func saveArticleItem(_ item: ArticleModel, context: ModelContext) {
+            let newItem = ArticleItem(id: item.id, title: item.title,
+                                      author: item.author, publishedDate: item.publishedDate,
+                                      descriptionText: item.description, updatedText: item.updated,
+                                      imgURL: item.media.first?.mediaMetadata.last?.url ?? "")
+            context.insert(newItem)
+            do {
+                    try context.save()
+                } catch {
+                    print("Error al guardar: \(error)")
+                }
+            
     }
     
 }

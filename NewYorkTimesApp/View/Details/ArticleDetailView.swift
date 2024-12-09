@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
+    //MARK: - Properties
+    let viewModel: NewsListVM
+    @Environment(\.modelContext) var context
     let article: ArticleModel
     
+    //MARK: - UIProperties
     var headerView: some View {
         VStack(alignment: .leading) {
             Text(article.title)
@@ -33,8 +37,8 @@ struct ArticleDetailView: View {
                 .font(.system(size: 22))
                 .padding(.horizontal)
                 .padding(.bottom)
-            Button("Save") {
-                print("Save This Article")
+            Button("save".localized()) {
+                viewModel.saveArticleItem(article, context: context)
             }
             .font(.headline)
             .foregroundColor(.white)
@@ -59,6 +63,7 @@ struct ArticleDetailView: View {
         .padding()
     }
     
+    //MARK: - Body
     var body: some View {
         ScrollView {
             VStack {
@@ -72,7 +77,7 @@ struct ArticleDetailView: View {
 }
 
 #Preview {
-    ArticleDetailView(article: ArticleModel(
+    ArticleDetailView(viewModel: NewsListVM(), article: ArticleModel(
         title: "A Neurologist’s Tips to Protect Your Memory",
         author: "By Hope Reese",
         publishedDate: "2022-07-06",
