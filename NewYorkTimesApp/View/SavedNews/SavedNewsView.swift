@@ -9,15 +9,15 @@ import SwiftData
 import SwiftUI
 
 struct SavedNewsView: View {
+    var viewModel: SavedNewsVM = SavedNewsVM()
     @Query var items: [ArticleItem]
     
     var body: some View {
-        Text("Saved articles")
+        Text("saved_articles".localized())
             .font(.title)
         
          List(items) { i in
-             
-             NewsCell(article: ArticleModel(title: i.title, author: i.author, publishedDate: i.publishedDate, description: i.descriptionText, updated: i.updatedText, media: [Media(mediaMetadata: [MediaMetadata(url: i.imgURL, format: "", height: 0, width: 0)])]))
+             NewsCell(article: viewModel.getArticleModelFrom(i))
                      .listRowBackground(Color.clear)
                      .listRowSeparator(.hidden)
              
