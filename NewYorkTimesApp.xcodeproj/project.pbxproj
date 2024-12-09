@@ -26,9 +26,22 @@
 		DB7564B32D037D70005FD289 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB7564B12D037D70005FD289 /* Localizable.strings */; };
 		DB7564B52D037EFC005FD289 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564B42D037EFC005FD289 /* String+Extensions.swift */; };
 		DB7564B92D038D69005FD289 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7564B82D038D69005FD289 /* RequestError.swift */; };
+		DB89450A2D0768C30058988B /* NewYorkTimesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8945092D0768C30058988B /* NewYorkTimesAppTests.swift */; };
+		DB8945112D076B2E0058988B /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8945102D076B2E0058988B /* NetworkManagerTests.swift */; };
+		DB8945142D076D3E0058988B /* MockNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8945132D076D3E0058988B /* MockNetworkSession.swift */; };
 		DBC3CFFB2D04D99E001D4BF5 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3CFFA2D04D99E001D4BF5 /* NetworkSession.swift */; };
 		DBC3CFFD2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3CFFC2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB89450B2D0768C30058988B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB65AC942D0247E800000C37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB65AC9B2D0247E800000C37;
+			remoteInfo = NewYorkTimesApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsView.swift; sourceTree = "<group>"; };
@@ -51,6 +64,10 @@
 		DB7564B42D037EFC005FD289 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DB7564B62D038087005FD289 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB7564B82D038D69005FD289 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		DB8945072D0768C30058988B /* NewYorkTimesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewYorkTimesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8945092D0768C30058988B /* NewYorkTimesAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkTimesAppTests.swift; sourceTree = "<group>"; };
+		DB8945102D076B2E0058988B /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		DB8945132D076D3E0058988B /* MockNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkSession.swift; sourceTree = "<group>"; };
 		DBC3CFFA2D04D99E001D4BF5 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		DBC3CFFC2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkSession+URLSession.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +78,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB65ACBD2D0276BF00000C37 /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8945042D0768C30058988B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				DB65AC9E2D0247E800000C37 /* NewYorkTimesApp */,
+				DB8945082D0768C30058988B /* NewYorkTimesAppTests */,
 				DB65AC9D2D0247E800000C37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				DB65AC9C2D0247E800000C37 /* NewYorkTimesApp.app */,
+				DB8945072D0768C30058988B /* NewYorkTimesAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +224,24 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		DB8945082D0768C30058988B /* NewYorkTimesAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8945122D076D1F0058988B /* Mocks */,
+				DB8945092D0768C30058988B /* NewYorkTimesAppTests.swift */,
+				DB8945102D076B2E0058988B /* NetworkManagerTests.swift */,
+			);
+			path = NewYorkTimesAppTests;
+			sourceTree = "<group>";
+		};
+		DB8945122D076D1F0058988B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DB8945132D076D3E0058988B /* MockNetworkSession.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +265,24 @@
 			productReference = DB65AC9C2D0247E800000C37 /* NewYorkTimesApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DB8945062D0768C30058988B /* NewYorkTimesAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB89450F2D0768C30058988B /* Build configuration list for PBXNativeTarget "NewYorkTimesAppTests" */;
+			buildPhases = (
+				DB8945032D0768C30058988B /* Sources */,
+				DB8945042D0768C30058988B /* Frameworks */,
+				DB8945052D0768C30058988B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB89450C2D0768C30058988B /* PBXTargetDependency */,
+			);
+			name = NewYorkTimesAppTests;
+			productName = NewYorkTimesAppTests;
+			productReference = DB8945072D0768C30058988B /* NewYorkTimesAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -233,6 +295,10 @@
 				TargetAttributes = {
 					DB65AC9B2D0247E800000C37 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					DB8945062D0768C30058988B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = DB65AC9B2D0247E800000C37;
 					};
 				};
 			};
@@ -254,6 +320,7 @@
 			projectRoot = "";
 			targets = (
 				DB65AC9B2D0247E800000C37 /* NewYorkTimesApp */,
+				DB8945062D0768C30058988B /* NewYorkTimesAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +333,13 @@
 				DB65ACA92D0247E900000C37 /* Preview Assets.xcassets in Resources */,
 				DB7564B32D037D70005FD289 /* Localizable.strings in Resources */,
 				DB65ACA62D0247E900000C37 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8945052D0768C30058988B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +370,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB8945032D0768C30058988B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8945112D076B2E0058988B /* NetworkManagerTests.swift in Sources */,
+				DB8945142D076D3E0058988B /* MockNetworkSession.swift in Sources */,
+				DB89450A2D0768C30058988B /* NewYorkTimesAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB89450C2D0768C30058988B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB65AC9B2D0247E800000C37 /* NewYorkTimesApp */;
+			targetProxy = DB89450B2D0768C30058988B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DB7564B12D037D70005FD289 /* Localizable.strings */ = {
@@ -490,6 +582,42 @@
 			};
 			name = Release;
 		};
+		DB89450D2D0768C30058988B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XL8LNQ68C9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diego.NewYorkTimesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewYorkTimesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewYorkTimesApp";
+			};
+			name = Debug;
+		};
+		DB89450E2D0768C30058988B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XL8LNQ68C9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diego.NewYorkTimesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewYorkTimesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewYorkTimesApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +635,15 @@
 			buildConfigurations = (
 				DB65ACAD2D0247E900000C37 /* Debug */,
 				DB65ACAE2D0247E900000C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB89450F2D0768C30058988B /* Build configuration list for PBXNativeTarget "NewYorkTimesAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB89450D2D0768C30058988B /* Debug */,
+				DB89450E2D0768C30058988B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
