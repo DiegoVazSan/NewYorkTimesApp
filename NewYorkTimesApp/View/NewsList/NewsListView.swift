@@ -45,6 +45,14 @@ struct NewsListView: View {
                 }
             }
             .navigationTitle("main_title".localized())
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SavedNewsView()) {
+                        Image(systemName: "star.circle.fill")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
         }
     }
 }

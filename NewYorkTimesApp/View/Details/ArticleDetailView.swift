@@ -32,6 +32,17 @@ struct ArticleDetailView: View {
             Text(article.description)
                 .font(.system(size: 22))
                 .padding(.horizontal)
+                .padding(.bottom)
+            Button("Save") {
+                print("Save This Article")
+            }
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 200)
+            .background(Color.black)
+            .cornerRadius(12)
+            .padding(.bottom)
         }
     }
     

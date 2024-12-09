@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB14D0792D0748FE0015C9E5 /* SavedNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */; };
 		DB4C8C692D05DAC900BD61A8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C8C682D05DAC900BD61A8 /* ErrorView.swift */; };
 		DB4C8C6C2D05DC1100BD61A8 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C8C6B2D05DC1100BD61A8 /* ArticleDetailView.swift */; };
 		DB55156F2D03D6BB007571BF /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55156E2D03D6BB007571BF /* APIConfig.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsView.swift; sourceTree = "<group>"; };
 		DB4C8C682D05DAC900BD61A8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DB4C8C6B2D05DC1100BD61A8 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		DB55156E2D03D6BB007571BF /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB14D0772D0748E10015C9E5 /* SavedNews */ = {
+			isa = PBXGroup;
+			children = (
+				DB14D0782D0748FE0015C9E5 /* SavedNewsView.swift */,
+			);
+			path = SavedNews;
+			sourceTree = "<group>";
+		};
 		DB4C8C672D05DAB200BD61A8 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		DB65ACB22D0256E800000C37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB14D0772D0748E10015C9E5 /* SavedNews */,
 				DB4C8C6A2D05DBF100BD61A8 /* Details */,
 				DB4C8C672D05DAB200BD61A8 /* Reusable */,
 				DB65ACAF2D02568600000C37 /* NewsList */,
@@ -277,6 +288,7 @@
 				DB4C8C6C2D05DC1100BD61A8 /* ArticleDetailView.swift in Sources */,
 				DB7564B92D038D69005FD289 /* RequestError.swift in Sources */,
 				DB4C8C692D05DAC900BD61A8 /* ErrorView.swift in Sources */,
+				DB14D0792D0748FE0015C9E5 /* SavedNewsView.swift in Sources */,
 				DB7564B02D037C41005FD289 /* Config.swift in Sources */,
 				DB65ACB82D025D8900000C37 /* NewsCell.swift in Sources */,
 				DBC3CFFD2D04D9CD001D4BF5 /* NetworkSession+URLSession.swift in Sources */,
