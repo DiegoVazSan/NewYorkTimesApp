@@ -10,22 +10,32 @@ import SwiftUI
 
 struct SavedNewsView: View {
     var viewModel: SavedNewsVM = SavedNewsVM()
-    @Query var items: [ArticleItem]
+    @Query var savedArticles: [ArticleItem]
     
     var body: some View {
-        Text("saved_articles".localized())
-            .font(.title)
-        
-         List(items) { i in
-             NewsCell(article: viewModel.getArticleModelFrom(i))
-                     .listRowBackground(Color.clear)
-                     .listRowSeparator(.hidden)
-             
-         }
-         .listStyle(PlainListStyle())
-         .scrollIndicators(.hidden)
-        
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("saved_articles".localized())
+                    .font(.title)
+                    .bold()
+                    .padding(.horizontal)
+                    .padding(.bottom)
+                
+                VStack(spacing: 0) {
+                    ForEach(savedArticles) { item in
+                        NewsCell(article: viewModel.getArticleModelFrom(item))
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .padding(.horizontal)
+                            .padding(.bottom, 8)
+                    }
+                }
+            }
+            .padding(.vertical)
+        }
+        .scrollIndicators(.hidden)
     }
+
 }
 
 #Preview {
